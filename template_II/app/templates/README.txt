@@ -1,0 +1,3 @@
+Notes:
+1). Templates are usually located in the folder of 'templates' in folder 'app', then django will search these templates automatically.
+2). While there maybe many apps for one django project. If app folder for each app contains the same template files, django will traverse all the app folders to find the template files. And it will stops once these files are found in any one of these app folders. So, this may lead to getting incorrect template files sometimes. In order to solve this problem, what we need to do is create a directory to store all the related template files for the app related only under the folder of app in one project.

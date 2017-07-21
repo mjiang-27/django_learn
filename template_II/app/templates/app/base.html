@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>{% block title  %} Default Title {% endblock  %} - My Django Curriculum </title>
+	</head>
+	<body>
+		{% include 'app/nav.html' %}
+		<br>
+        {% block content  %}
+		<div style="font-size: 120px; color: blue;"> Defaut Content (inherited from template, displayed if not covered by new file) </div>
+		{% endblock %}
+		<br>
+		{% include 'app/bottom.html' %}
+		<br>
+		{% include 'app/tongji.html' %}
+	</body>
+</html>
