@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> {{ title }} </title>
+    </head>
+
+    <div> Welcome to homepage !</div>
+    <div> <a href="{% url 'columns' %}"> Columns </a> </div>
+    <div> <a href="{% url 'login' %}"> Login </a> </div>
+    <br>
+    <div> DEBUG: {{ settings.DEBUG }} </div>
+    <div> ip: {{ ip_address }} </div>
+    <div> url: {{ request.path }} </div>
+    <div> authentication: {{ request.user.is_authenticated }} </div>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {{ title  }}
+    </head>
+    <div id='tutoriaList'>
+        <label> Tutoria List  </label>
+    </div>
+    <div>
+        <ul>
+        <!--1. case for last elem in list in a for loop-->
+        <!--2. case for that when list is empty-->
+        {% for elem in tutoriaList %}
+            <li>{{ elem }} {% if not forloop.last %};{% else %}.{% endif %}</li>
+        {% empty %}
+            <li> Sorry, empty tutoria list! </li>
+        {% endfor  %}
+    </ul>
+    </div>
+    <div id='info'>
+        <div><label align='left'> Information </label></div>
+        {% for key, value in info.items %}
+            <div>{{ key }}: {{ value }}</div>
+        {% endfor  %}
+    </div>
+    <br>
+    <div><a href="{% url 'add' 13 14 %}"> Try add 13 and 14 </a></div>
+</html>
