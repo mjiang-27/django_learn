@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Blog list </title>
+    </head>
+
+    <body>
+    <div> Blogs </div>
+    {% for blog in blogs %}
+        <div> <label> Blog title: </label>{{ blog.title }} </div>
+        <div> <label> Blog tagline: </label>{{ blog.tag_line }} </div>
+        <br>
+    {% endfor %}
+   </body>
+</html>

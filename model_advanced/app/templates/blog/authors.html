@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Author list </title>
+    </head>
+
+    <body>
+    <div> Authors </div>
+    {% for author in authors %}
+        <div> <label>Author Name:</label>{{ author.name }}</div>
+        <div> <label> Author Email:</label>{{ author.email }} </div>
+        <br>
+    {% endfor %}
+   </body>
+</html>
