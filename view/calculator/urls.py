@@ -21,7 +21,7 @@ from calc import views as calc_views # new
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^$', calc_views.index, name="name"), # new 
+    url(r'^$', calc_views.index, name="index"), # new 
     url(r'^add/$', calc_views.add, name='add'), # new
     url(r'^add/(\d+)/(\d+)/$', calc_views.old_add2_redirect), # new
     url(r'^add_new/(\d+)/(\d+)/$', calc_views.add2, name='add2'), # new
