@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to My Caculator!</title>
+    </head>
+    <body>
+        <div> Please input two numbers: </div>
+
+        <form method='post'>
+            {% csrf_token %}
+            <div> {{ form }} </div>
+           <div> <input type='submit' value='submit'> </div>
+       </form>
+
+    </body>
+</html>
