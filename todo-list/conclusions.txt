@@ -1,0 +1,1 @@
+1). Conclusions for useages of django models, forms and admins
