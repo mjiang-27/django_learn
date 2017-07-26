@@ -3,11 +3,11 @@
 <html>
     <head>
         <title> Books Management System </title>
-        <p> Add a new book </p>
+        <p> Delete a new book <br> Please input all the info below:</p>
     </head>
 
     <body>
-        <form action="{% url 'add' %}" method="post">
+        <form action="{% url 'delete' %}" method="post">
         {% csrf_token %}
             <div> Please input some information for new book: </div>
             <br>

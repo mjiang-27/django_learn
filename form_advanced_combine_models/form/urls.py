@@ -23,6 +23,8 @@ urlpatterns = [
 
     url(r'^index/$', app_views.index, name='index'),
     url(r'^add/$', app_views.add, name='add'),
+    url(r'^delete/$', app_views.delete, name='delete'),
     url(r'^list/$', app_views.lists, name='list'),
     url(r'^add_result/$', app_views.add_result, name='add_result'),
+    url(r'^delete_result/$', app_views.delete_result, name='delete_result'),
 ]
