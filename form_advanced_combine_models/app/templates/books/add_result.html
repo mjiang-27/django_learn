@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Books Management System </title>
+        <p> New book added successfull !!! </p>
+    </head>
+
+    <body>
+        <div>Book info: <br>
+        {% for item in book %}
+            <div> {{ item }}</div> <br>
+        {% endfor %}
+        </div>
+
+        <div> <a href="{% url 'index' %}"> Index </a> </div>
+        <br>
+        <div> <a href="{% url 'list' %}"> List all books </a> </div>
+        <br>
+       <div> <a href="{% url 'add' %}"> Add a new book </a> </div>
+    </body>
+</html>

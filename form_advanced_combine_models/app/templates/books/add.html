@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Books Management System </title>
+        <p> Add a new book </p>
+    </head>
+
+    <body>
+        <form method="post">
+        <!--{% csrf_token %}-->
+            <div> Please input some information for new book: </div>
+            <br>
+            <div> Name: <input type='text' name='name'></input> </div>
+            <br>
+            <div> Author: <input type='text' name='author'></input> </div>
+            <br>
+            <div> Price: <input type='text' name='price'></input> </div>
+            <br>
+            <div> Description: <input type='text' name='description'></input> </div>
+            <div> <input type='submit' value='Submit'> </div>
+        </form>
+
+        <br>
+        <div> <a href="{% url 'index' %}"> Index </a> </div>
+        <br>
+        <div> <a href="{% url 'list' %}"> List all books </a> </div>
+   </body>
+</html>
