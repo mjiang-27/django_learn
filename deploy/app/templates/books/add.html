@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Books Management System </title>
+        <p> Add a new book </p>
+    </head>
+
+    <body>
+        <form action="{% url 'add' %}" method="post">
+        {% csrf_token %}
+            <div> Please input some information for new book: </div><br>
+            <div> Name: <input type='text' id='name' name='name'></input> </div><br>
+            <div> Author: <input type='text' id='author' name='author'></input> </div><br>
+            <div> Price: <input type='text' id='price' name='price'></input> </div><br>
+            <div> Description: <input type='text' id='description' name='description'></input> </div><br>
+            <div> <button type='button' value='Submit' id='add'>Submit</button> </div><br>
+        </form>
+
+        <div>Status: <span id='status'></span></div><br>
+        <div>Result: <span id='result'></span></div><br>
+
+        <div> <a href="{% url 'index' %}"> Index </a> </div><br>
+        <div> <a href="{% url 'list' %}"> List all books </a> </div><br>
+        <div> <a href="{% url 'delete' %}"> Delete a book </a> </div><br>
+    <body>
+
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+            });
+
+            $("#add").click(function() {
+                var name = $("#name").val();
+                var author = $("#author").val();
+                var price = $("#price").val();
+                var description = $("#description").val();
+
+                $.post("{% url 'add' %}", {'name':name, 'author':author, 'price':price, 'description':description}, function(data, status) {
+                    $("#status").html(status);
+                    $("#result").html(data);
+                });
+            });
+        });
+    </script>
+</html>
