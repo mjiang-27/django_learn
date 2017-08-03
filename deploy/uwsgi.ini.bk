@@ -1,0 +1,25 @@
+# This is a more complicated configurations for uwsgi.
+# Delete irrelevant texts and comments before using it.
+
+[uwsgi]
+socket = 127.0.0.1:9090 
+stats = 127.0.0.1:9191
+chdir = /home/mjiang/django_learn/deploy
+wsgi-file = deploy/wsgi.py
+touch-reload = /home/mjiang/django_learn/deploy/reload
+
+pidfile = /var/run/deploy.pid
+daemonize = /home/mjiang/django_learn/deploy/deploy.log
+
+master = true
+
+processes = 2
+threads = 4
+workers = 2
+reload-mercy = 10
+
+max-requests = 1000
+limit-as = 512
+buffer-size = 30000
+
+vacuum = true
