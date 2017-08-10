@@ -2,19 +2,16 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from django.contrib import auth
-
-# from models import User
-# from forms import UserForm
+# from django.contrib import auth
+from django.contrib.auth.models import User
 
 def sign_in(req):
     errors = []
 
     if req.method == "POST":
-        form = Form(req.POST)
-        data = form.clean()
-        name = data.get("name")
-        password = data.get("password")
+        data = req.POST
+        name = data["username"]
+        password = data["password"]
         user = auth.authenticate(username = username, password = password)
 
         if user:
@@ -32,13 +29,13 @@ def sign_up(req):
     errors = []
 
     if req.method == "POST":
-        form = Form(req.POST)
-        # form = UserForm(req.POST)
-        data = form.clean()
-        name = data.get("name")
-        password = data.get("password")
-        password2 = data.get("password2")
-        email = data.get("email")
+        data = req.POST
+        name = data['username']
+        password = data["password"]
+        password2 = data["password2"]
+        email = data["email"]
+
+        print "" + name + " " + password + " " + " " + password + " " + email
 
         if not name:
             errors.append("Please input account.")
@@ -59,7 +56,8 @@ def sign_up(req):
             errors.append("Please input email")
 
         if name is not None and password is not None and password2 is not None and email is not None and compare_flag:
-            user = User.objects.create(name, email, password)
+            # ToDo: check whether user already exists
+            user = User.objects.create_user(name, email, password)
             user.is_active = True
             user.save
             return HttpResponseRedirect('accounts/index.html')

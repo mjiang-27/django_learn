@@ -10,8 +10,8 @@
 
 {% block content %}
     <div style = "padding: 100px 100px 10px;">
-        <form class = "form-horizontal" role = "form" id = "signin" action="{% url 'signup' %}" method="post">
-            {% csrf_token %}
+        <form class = "form-horizontal" role = "form" id = "signin">
+        {% csrf_token %}
             <div class ="form-group">
                 <label for = "username" class = "control-label col-sm-4">User Name</label>
                     <div class = "col-sm-3">
@@ -27,23 +27,10 @@
             </div>
 
             <div class = "form-group">
-                <label for = "password2" class = "control-label col-sm-4">Confirm Password</label>
-                    <div class = "col-sm-3">
-                        <input type = "password" class = "form-control" id = "password2" name = "password2" placeholder = "Please confirm your password...">
-                    </div>
-            </div>
-
-            <div class = "form-group">
-                <label for = "email" class = "control-label col-sm-4">Email</label>
-                    <div class = "col-sm-3">
-                        <input type = "text" class = "form-control" id = "email" name = "email" placeholder = "Please input your email...">
-                    </div>
-            </div>
-
-            <div class = "form-group">
                 <div class="col-sm-7" align="right">
-                    <a href="{% url 'signin' %}" class="btn btn-link text-muted">Sign in</a>
-                    <button value="signup" id="signup_btn" class="btn btn-primary" type="submit">Sign up</button>
+                    <a href="#" class="btn btn-link text-muted">Forgot password?</a>
+                    <a href = "{% url 'signup' %}" class = "btn btn-link text-muted">Sign Up</a>
+                    <button value="signin" type = "submit" id="signin_btn" class="btn btn-primary" type="submit">Sign In</button>
                 </div>
             </div>
       </form>

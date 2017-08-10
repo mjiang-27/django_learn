@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^home/$', app_views.home, name='home'),
     url(r'^home/signup/$', app_views.sign_up, name='signup'),
     url(r'^home/signin/$', app_views.sign_in, name='signin'),
-    url(r'^home/account/index$', app_views.index, name='index'),
+    url(r'^home/account/index/$', app_views.index, name='index'),
 ]
